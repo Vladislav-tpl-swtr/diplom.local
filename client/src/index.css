@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Кастомные стили для точного совпадения */
+.sidebar-category {
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+.sidebar-category:hover {
+    border-left-color: #1a5632;
+    background-color: #f8f8f8;
+}
+
+/* Кастомные стили для аккордеона */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.accordion-toggle:checked + .accordion-label + .accordion-content {
+    max-height: 500px; /* Увеличьте, если нужно */
+}
+.accordion-toggle:checked + .accordion-label .icon {
+    transform: rotate(45deg); /* Меняем + на - */
+}
+.icon {
+    transition: transform 0.3s ease;
+}
+
+/* Кастомные стили для выпадающего меню */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #374151;
+    white-space: nowrap;
+}
+.dropdown-menu a:hover {
+    background-color: #f3f4f6;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}

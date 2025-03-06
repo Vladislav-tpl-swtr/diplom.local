@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Админ Панель - Управление Изображениями</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Управление Изображениями</h1>
+
+    <h2>Выберите продукт</h2>
+    <div class="form-group">
+        <label for="productSelect">Продукты</label>
+        <select class="form-control" id="productSelect" required>
+            <option value="">Выберите продукт...</option>
+        </select>
+    </div>
+
+    <h2>Загрузить Изображение</h2>
+    <form id="uploadForm">
+        <div class="form-group">
+            <label for="image">Выберите изображение</label>
+            <input type="file" class="form-control-file" id="image" required>
+        </div>
+        <div class="form-group">
+            <label for="isPrimary">Основное изображение</label>
+            <select class="form-control" id="isPrimary">
+                <option value="false">Нет</option>
+                <option value="true">Да</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Загрузить</button>
+    </form>
+
+    <hr>
+
+    <h2>Список Изображений</h2>
+    <div id="imagesList" class="row"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
